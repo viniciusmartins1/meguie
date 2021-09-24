@@ -160,7 +160,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:background="null"
+        />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
@@ -177,7 +179,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:background="null"
+        />
 
     <Button
         android:id="@+id/button12"
