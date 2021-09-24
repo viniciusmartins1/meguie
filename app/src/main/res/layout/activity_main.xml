@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Fundo"
+        app:srcCompat="@mipmap/fundo"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -26,7 +26,7 @@
         android:rotation="-8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/FlairRed" />
+        app:srcCompat="@mipmap/flairred" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -37,7 +37,7 @@
         android:rotation="-190"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/FlairRed" />
+        app:srcCompat="@mipmap/flairred" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -47,7 +47,7 @@
         android:layout_marginEnd="38dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Guiacone" />
+        app:srcCompat="@mipmap/guiaicone" />
 
     <Button
         android:id="@+id/button6"
@@ -66,8 +66,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="241dp"
-        android:layout_height="46dp"
+        android:layout_width="299dp"
+        android:layout_height="73dp"
         android:text="Pesquise uma cidade"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -77,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443" />
+        app:layout_constraintVertical_bias="0.457" />
 
     <ImageView
         android:id="@+id/imageView31"
@@ -92,14 +92,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.541"
-        app:srcCompat="@mipmap/Bubble" />
+        app:srcCompat="@mipmap/bubble" />
 
     <SearchView
-        android:layout_width="185dp"
+        android:layout_width="300dp"
         android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.535" />

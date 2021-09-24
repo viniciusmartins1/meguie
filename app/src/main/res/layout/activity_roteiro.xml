@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Fundo" />
+        app:srcCompat="@mipmap/fundo" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -25,7 +25,7 @@
         android:rotation="-8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/FlairRed" />
+        app:srcCompat="@mipmap/flairred" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -36,7 +36,7 @@
         android:rotation="-190"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/FlairRed" />
+        app:srcCompat="@mipmap/flairred" />
 
     <Button
         android:id="@+id/button2"
@@ -76,58 +76,70 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="388dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="64dp"
+        android:layout_width="238dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="205dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="497dp"
         android:text="Escolha  o(s) Ponto(s) Turistico(s)"
-        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="286dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="280dp"
+        android:layout_width="238dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="283dp"
         android:layout_marginEnd="132dp"
+        android:layout_marginBottom="419dp"
         android:text="Escolha o Ponto de Encontro"
-        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="304dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="356dp"
-        android:layout_marginEnd="168dp"
+        android:layout_width="238dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="353dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="349dp"
         android:text="Escolha a data"
-        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="301dp"
-        android:layout_height="43dp"
+        android:layout_width="238dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="420dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="282dp"
         android:text="Escolha o horário"
-        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -191,11 +203,9 @@
         android:scaleY="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/Bubble"
+        app:srcCompat="@mipmap/bubble"
         app:tint="#AFAFAF" />
 
     <ImageView
@@ -213,7 +223,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Bubble"
+        app:srcCompat="@mipmap/bubble"
         app:tint="#AFAFAF" />
 
     <ImageView
@@ -231,7 +241,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Bubble"
+        app:srcCompat="@mipmap/bubble"
         app:tint="#AFAFAF" />
 
     <ImageView
@@ -249,16 +259,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Bubble"
+        app:srcCompat="@mipmap/bubble"
         app:tint="#AFAFAF" />
 
     <SearchView
-        android:layout_width="119dp"
-        android:layout_height="34dp"
+        android:layout_width="296dp"
+        android:layout_height="40dp"
         android:layout_marginStart="54dp"
         android:layout_marginTop="306dp"
-        android:layout_marginEnd="238dp"
-        android:layout_marginBottom="391dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="385dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -272,36 +282,36 @@
     </SearchView>
 
     <SearchView
-        android:layout_width="92dp"
-        android:layout_height="31dp"
+        android:layout_width="296dp"
+        android:layout_height="40dp"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="235dp"
-        android:layout_marginEnd="265dp"
-        android:layout_marginBottom="465dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="464dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
-        android:layout_width="61dp"
-        android:layout_height="29dp"
+        android:layout_width="296dp"
+        android:layout_height="40dp"
         android:layout_marginStart="54dp"
         android:layout_marginTop="381dp"
-        android:layout_marginEnd="296dp"
-        android:layout_marginBottom="321dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="310dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
-        android:layout_width="60dp"
-        android:layout_height="36dp"
+        android:layout_width="296dp"
+        android:layout_height="40dp"
         android:layout_marginStart="57dp"
         android:layout_marginTop="446dp"
-        android:layout_marginEnd="294dp"
-        android:layout_marginBottom="249dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="245dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

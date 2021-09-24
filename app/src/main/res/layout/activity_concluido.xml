@@ -15,7 +15,7 @@
         android:rotation="-8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/FlairGray" />
+        app:srcCompat="@mipmap/flairgray" />
 
     <ImageView
         android:id="@+id/imageView28"
@@ -26,7 +26,7 @@
         android:rotation="-190"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/FlairGray" />
+        app:srcCompat="@mipmap/flairgray" />
 
     <TextView
         android:id="@+id/textView14"
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Check" />
+        app:srcCompat="@mipmap/check" />
 
     <TextView
         android:id="@+id/textView26"

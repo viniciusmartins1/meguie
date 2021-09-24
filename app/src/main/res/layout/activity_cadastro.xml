@@ -8,15 +8,17 @@
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="263dp"
-        android:layout_height="236dp"
-        android:layout_marginStart="74dp"
-        android:layout_marginEnd="74dp"
-        android:layout_marginBottom="537dp"
+        android:layout_width="199dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="583dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/Guiacone" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/guiaicone" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -27,18 +29,18 @@
         android:rotation="-8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/FlairGray" />
+        app:srcCompat="@mipmap/flairgray" />
 
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="326dp"
         android:layout_height="267dp"
-        android:layout_marginTop="598dp"
-        android:layout_marginEnd="229dp"
-        android:rotation="-190"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="216dp"
+        android:rotation="-215"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/FlairGray" />
+        app:srcCompat="@mipmap/flairgray" />
 
     <Button
         android:id="@+id/button11"
@@ -59,12 +61,12 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="348dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="147dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="521dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="556dp"
         android:text="Dados Cadastrais"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -87,11 +89,9 @@
         android:scaleY="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@mipmap/Bubble" />
+        app:srcCompat="@mipmap/bubble" />
 
     <ImageView
 
@@ -108,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Bubble" />
+        app:srcCompat="@mipmap/bubble" />
 
     <ImageView
         android:id="@+id/imageView24"
@@ -124,7 +124,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Bubble" />
+        app:srcCompat="@mipmap/bubble" />
 
     <ImageView
         android:id="@+id/imageView25"
@@ -138,11 +138,9 @@
         android:scaleY="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/Bubble" />
+        app:srcCompat="@mipmap/bubble" />
 
     <ImageView
         android:id="@+id/imageView26"
@@ -158,11 +156,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/Bubble" />
+        app:srcCompat="@mipmap/bubble" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress3"
-        android:layout_width="313dp"
+        android:layout_width="310dp"
         android:layout_height="44dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="315dp"
@@ -170,7 +168,6 @@
         android:layout_marginBottom="372dp"
         android:ems="10"
         android:hint="Email"
-        android:background="null"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +177,7 @@
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="306dp"
+        android:layout_width="310dp"
         android:layout_height="45dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="550dp"
@@ -188,7 +185,6 @@
         android:layout_marginBottom="136dp"
         android:ems="10"
         android:hint="Telefone"
-        android:background="null"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -198,7 +194,7 @@
 
     <EditText
         android:id="@+id/editTextTextPassword3"
-        android:layout_width="304dp"
+        android:layout_width="310dp"
         android:layout_height="44dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="397dp"
@@ -206,7 +202,6 @@
         android:layout_marginBottom="290dp"
         android:ems="10"
         android:hint="Senha"
-        android:background="null"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -216,7 +211,7 @@
 
     <EditText
         android:id="@+id/editTextNumber2"
-        android:layout_width="307dp"
+        android:layout_width="310dp"
         android:layout_height="45dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="470dp"
@@ -224,7 +219,6 @@
         android:layout_marginBottom="216dp"
         android:ems="10"
         android:hint="CPF"
-        android:background="null"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -242,7 +236,6 @@
         android:layout_marginBottom="453dp"
         android:ems="10"
         android:hint="Nome"
-        android:background="null"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
