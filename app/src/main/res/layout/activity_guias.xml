@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Guias">
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="326dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginBottom="584dp"
+        android:rotation="-8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/FlairGray" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="326dp"
+        android:layout_height="267dp"
+        android:layout_marginTop="598dp"
+        android:layout_marginEnd="229dp"
+        android:rotation="-190"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/FlairGray" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="186dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="598dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="83dp"
+        android:backgroundTint="#FF5656"
+        android:text="Selecionar"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="348dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="568dp"
+        android:text="Guias Disponíveis"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="222dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="406dp"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/BigBubble" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="222dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="361dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="221dp"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/BigBubble" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="115dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="258dp"
+        android:layout_marginBottom="416dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/User" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="115dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="258dp"
+        android:layout_marginBottom="230dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/User" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="163dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="182dp"
+        android:layout_marginTop="205dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="419dp"
+        android:text="Lorem limpsum, lorem limpsum, Lorem limpsum, lorem limpsum, Lorem limpsum, lorem limpsum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="163dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="182dp"
+        android:layout_marginTop="386dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="238dp"
+        android:text="Lorem limpsum, lorem limpsum, Lorem limpsum, lorem limpsum, Lorem limpsum, lorem limpsum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Erro">
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="326dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginBottom="584dp"
+        android:rotation="-8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/FlairGray" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="326dp"
+        android:layout_height="267dp"
+        android:layout_marginTop="598dp"
+        android:layout_marginEnd="229dp"
+        android:rotation="-190"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/FlairGray" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="348dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="334dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="334dp"
+        android:text="Ops! Parece que ocorreu um erro"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="336dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="410dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="300dp"
+        android:text="Você será retornado a página anterior"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="324dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="431dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="252dp"
+        android:text="para tentar novamente"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="431dp"
+        android:layout_height="407dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="321dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/Fail" />
+</androidx.constraintlayout.widget.ConstraintLayout>
