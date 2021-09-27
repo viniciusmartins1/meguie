@@ -11,24 +11,18 @@
         android:theme="@style/Theme.Trabalho">
         <activity
             android:name=".Erro"
-            android:exported="true" />
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".Concluido"
-            android:exported="true" />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".Cadastro"
-            android:exported="true" />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".Login"
-            android:exported="true" />
-        <activity
-            android:name=".Guias"
-            android:exported="true" />
-        <activity
-            android:name=".Roteiro"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +30,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Guias"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Roteiro"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
