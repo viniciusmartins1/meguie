@@ -4,32 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Concluido">
+    tools:context=".concluido">
 
     <ImageView
-        android:id="@+id/imageView27"
+        android:id="@+id/imageView41"
+        android:layout_width="525dp"
+        android:layout_height="845dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/blank" />
+
+    <ImageView
+        android:id="@+id/imageView32"
         android:layout_width="326dp"
         android:layout_height="267dp"
-        android:layout_marginStart="248dp"
-        android:layout_marginBottom="584dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="580dp"
         android:rotation="-8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/flairgray" />
 
     <ImageView
-        android:id="@+id/imageView28"
+        android:id="@+id/imageView33"
         android:layout_width="326dp"
         android:layout_height="267dp"
-        android:layout_marginTop="598dp"
-        android:layout_marginEnd="229dp"
+        android:layout_marginTop="596dp"
+        android:layout_marginEnd="216dp"
         android:rotation="-190"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/flairgray" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textView16"
         android:layout_width="348dp"
         android:layout_height="63dp"
         android:layout_marginStart="31dp"
@@ -47,7 +59,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView33"
+        android:id="@+id/imageView34"
         android:layout_width="431dp"
         android:layout_height="407dp"
         android:layout_marginTop="7dp"
@@ -59,7 +71,7 @@
         app:srcCompat="@mipmap/check" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/textView17"
         android:layout_width="336dp"
         android:layout_height="21dp"
         android:layout_marginStart="35dp"
@@ -74,7 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/textView18"
         android:layout_width="324dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
@@ -87,5 +99,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

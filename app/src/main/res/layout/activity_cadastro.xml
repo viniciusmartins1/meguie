@@ -4,10 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cadastro">
+    tools:context=".cadastro">
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/imageView39"
+        android:layout_width="525dp"
+        android:layout_height="845dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/blank" />
+
+    <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="199dp"
         android:layout_height="142dp"
         android:layout_marginStart="106dp"
@@ -21,29 +33,28 @@
         app:srcCompat="@mipmap/guiaicone" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/imageView7"
         android:layout_width="326dp"
         android:layout_height="267dp"
-        android:layout_marginStart="248dp"
-        android:layout_marginBottom="584dp"
-        android:rotation="-8"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="580dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/flairgray" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/imageView8"
         android:layout_width="326dp"
         android:layout_height="267dp"
-        android:layout_marginTop="595dp"
+        android:layout_marginTop="596dp"
         android:layout_marginEnd="216dp"
-        android:rotation="-215"
+        android:rotation="-190"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/flairgray" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/button3"
         android:layout_width="186dp"
         android:layout_height="50dp"
         android:layout_marginStart="112dp"
@@ -53,6 +64,7 @@
         android:backgroundTint="#FF5656"
         android:text="Cadastrar"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +72,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textView4"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
@@ -78,7 +90,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/imageView9"
         android:layout_width="313dp"
         android:layout_height="137dp"
         android:layout_marginStart="49dp"
@@ -95,7 +107,7 @@
 
     <ImageView
 
-        android:id="@+id/imageView23"
+        android:id="@+id/imageView10"
         android:layout_width="313dp"
         android:layout_height="137dp"
         android:layout_marginStart="49dp"
@@ -111,7 +123,7 @@
         app:srcCompat="@mipmap/bubble" />
 
     <ImageView
-        android:id="@+id/imageView24"
+        android:id="@+id/imageView11"
         android:layout_width="313dp"
         android:layout_height="137dp"
         android:layout_marginStart="48dp"
@@ -127,7 +139,7 @@
         app:srcCompat="@mipmap/bubble" />
 
     <ImageView
-        android:id="@+id/imageView25"
+        android:id="@+id/imageView12"
         android:layout_width="313dp"
         android:layout_height="137dp"
         android:layout_marginStart="49dp"
@@ -143,7 +155,7 @@
         app:srcCompat="@mipmap/bubble" />
 
     <ImageView
-        android:id="@+id/imageView26"
+        android:id="@+id/imageView13"
         android:layout_width="313dp"
         android:layout_height="137dp"
         android:layout_marginStart="49dp"
@@ -159,7 +171,7 @@
         app:srcCompat="@mipmap/bubble" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/editTextTextEmailAddress2"
         android:layout_width="310dp"
         android:layout_height="44dp"
         android:layout_marginStart="50dp"
@@ -169,6 +181,8 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#80000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -186,6 +200,8 @@
         android:ems="10"
         android:hint="Telefone"
         android:inputType="phone"
+        android:textColor="#000000"
+        android:textColorHint="#80000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +209,7 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/editTextTextPassword2"
         android:layout_width="310dp"
         android:layout_height="44dp"
         android:layout_marginStart="50dp"
@@ -203,6 +219,8 @@
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#80000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -210,7 +228,7 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/editTextNumber"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:layout_marginStart="50dp"
@@ -220,6 +238,8 @@
         android:ems="10"
         android:hint="CPF"
         android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#80000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -237,10 +257,11 @@
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#80000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
