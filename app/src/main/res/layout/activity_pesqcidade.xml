@@ -11,13 +11,10 @@
         android:id="@+id/imageView14"
         android:layout_width="922dp"
         android:layout_height="1093dp"
-        android:theme="@style/SearchAutoCompleteTextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/fundo"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="-214dp"
+        tools:layout_editor_absoluteY="-96dp" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -109,6 +106,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </SearchView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
