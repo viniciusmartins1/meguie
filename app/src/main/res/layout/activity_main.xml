@@ -56,7 +56,7 @@
         app:srcCompat="@mipmap/flairgray" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         android:layout_width="198dp"
         android:layout_height="48dp"
         android:layout_marginStart="106dp"
@@ -108,23 +108,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="173dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="218dp"
-        android:layout_marginTop="598dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="86dp"
-        android:text="Cadastre-se"
-        android:textAlignment="center"
-        android:textColor="#F44336"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="313dp"
@@ -165,6 +148,7 @@
         android:layout_marginTop="326dp"
         android:layout_marginEnd="61dp"
         android:layout_marginBottom="361dp"
+        android:background="@null"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -184,6 +168,7 @@
         android:layout_marginTop="416dp"
         android:layout_marginEnd="61dp"
         android:layout_marginBottom="273dp"
+        android:background="@null"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -198,19 +183,24 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/btnAcionarTelaCadastro"
-        android:layout_width="98dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="253dp"
-        android:layout_marginTop="584dp"
-        android:layout_marginBottom="94dp"
-        android:layout_marginEnd="60dp"
-        android:backgroundTint="#00FFFFFF"
-        android:bufferType="normal"
-        android:visibility="invisible"
+        android:id="@+id/btnTrocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:text="Cadastre-se"
+        android:textAllCaps="false"
+        android:textColor="#E82E2E"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

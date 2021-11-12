@@ -8,8 +8,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.meguie.model.*;
-
 import java.time.temporal.TemporalUnit;
 
 
@@ -17,7 +15,6 @@ public class cadastro extends AppCompatActivity {
 
     private EditText editNome, editEmail;
     private Button btnCadastrar;
-    private  ClienteDAO dao;
 
 
     @Override
@@ -27,20 +24,8 @@ public class cadastro extends AppCompatActivity {
 
         InicializarComponentes();
 
-        dao = new ClienteDAO(this);
 
 
-    }
-
-    public void  salvar(View view) {
-
-        Cliente cliente = new Cliente();
-        cliente.setEmail(editNome.getText().toString());
-        cliente.setEmail(editEmail.getText().toString());
-
-        long codigo = dao.inserir(cliente);
-
-        Toast.makeText(this, "Cliente inserid o com id " + codigo, Toast.LENGTH_SHORT).show();
     }
 
     private void InicializarComponentes() {
