@@ -40,24 +40,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/flairgray" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="186dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="598dp"
-        android:layout_marginEnd="113dp"
-        android:layout_marginBottom="83dp"
-        android:backgroundTint="#FF5656"
-        android:text="Selecionar"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView13"
         android:layout_width="348dp"
@@ -73,94 +55,20 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView28"
-        android:layout_width="222dp"
-        android:layout_height="149dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="95dp"
-        android:layout_marginBottom="406dp"
-        android:scaleX="2.5"
-        android:scaleY="2.5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/bigbubble" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView29"
-        android:layout_width="222dp"
-        android:layout_height="149dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="361dp"
-        android:layout_marginEnd="95dp"
-        android:layout_marginBottom="221dp"
-        android:scaleX="2.5"
-        android:scaleY="2.5"
+    <ListView
+        android:id="@+id/lvGuia"
+        android:layout_width="375dp"
+        android:layout_height="551dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/bigbubble" />
+        app:layout_constraintVertical_bias="0.905" />
 
-    <ImageView
-        android:id="@+id/imageView30"
-        android:layout_width="115dp"
-        android:layout_height="123dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="192dp"
-        android:layout_marginEnd="258dp"
-        android:layout_marginBottom="416dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/user" />
-
-    <ImageView
-        android:id="@+id/imageView31"
-        android:layout_width="115dp"
-        android:layout_height="123dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="378dp"
-        android:layout_marginEnd="258dp"
-        android:layout_marginBottom="230dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/user" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="163dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="182dp"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="66dp"
-        android:layout_marginBottom="419dp"
-        android:text="Lorem limpsum, lorem limpsum, Lorem limpsum, lorem limpsum, Lorem limpsum, lorem limpsum"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="163dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="182dp"
-        android:layout_marginTop="386dp"
-        android:layout_marginEnd="66dp"
-        android:layout_marginBottom="238dp"
-        android:text="Lorem limpsum, lorem limpsum, Lorem limpsum, lorem limpsum, Lorem limpsum, lorem limpsum"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
