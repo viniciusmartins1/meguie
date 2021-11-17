@@ -1,5 +1,6 @@
 package com.example.meguie.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -69,5 +70,46 @@ public class BancoDeDados extends SQLiteOpenHelper {
         cursor.close();
         mSqLiteDatabase.close();
         return listGuia;
+    }
+
+    public boolean salvarDadosCliente(String nome, String email, String senha,String cpf, String telefone){
+
+        openDataBase();
+        mSqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("NOME",nome);
+        contentValues.put("EMAIL",email);
+        contentValues.put("SENHA",senha);
+        contentValues.put("TELEFONE",telefone);
+        contentValues.put("CPF",cpf);
+
+        long result = mSqLiteDatabase.insert("TB_CLIENTE", null,contentValues);
+        if (result==1) return false;
+        else
+            return true;
+    }
+
+    public boolean checkEmail(String email){
+
+        openDataBase();
+        mSqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = mSqLiteDatabase.rawQuery("select * from TB_CLIENTE where EMAIL ="+email, null);
+
+        if (cursor.getCount()>0)
+            return true;
+        else
+            return false;
+    }
+
+    public boolean checkEmailSenha(String email, String senha){
+
+        mSqLiteDatabase = this.getWritableDatabase();
+        String sql = "select * from TB_CLIENTE where EMAIL = "+"'"+email+"'"+" and SENHA = "+"'"+senha+"'";
+        Cursor cursor = mSqLiteDatabase.rawQuery(sql, null);
+
+        if (cursor.getCount()>0)
+            return true;
+        else
+            return false;
     }
 }
