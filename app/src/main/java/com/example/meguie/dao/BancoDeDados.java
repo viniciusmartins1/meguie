@@ -84,6 +84,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
         contentValues.put("CPF",cpf);
 
         long result = mSqLiteDatabase.insert("TB_CLIENTE", null,contentValues);
+        mSqLiteDatabase.close();
         if (result==1) return false;
         else
             return true;
@@ -93,23 +94,35 @@ public class BancoDeDados extends SQLiteOpenHelper {
 
         openDataBase();
         mSqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = mSqLiteDatabase.rawQuery("select * from TB_CLIENTE where EMAIL ="+email, null);
+        Cursor cursor = mSqLiteDatabase.rawQuery("select * from TB_CLIENTE where EMAIL = ?", new String[]{email});
 
-        if (cursor.getCount()>0)
+        if (cursor.getCount()>0){
+            cursor.close();
+            mSqLiteDatabase.close();
             return true;
-        else
+        }
+        else{
+            cursor.close();
+            mSqLiteDatabase.close();
             return false;
+        }
     }
 
     public boolean checkEmailSenha(String email, String senha){
 
+        openDataBase();
         mSqLiteDatabase = this.getWritableDatabase();
-        String sql = "select * from TB_CLIENTE where EMAIL = "+"'"+email+"'"+" and SENHA = "+"'"+senha+"'";
-        Cursor cursor = mSqLiteDatabase.rawQuery(sql, null);
+        Cursor cursor = mSqLiteDatabase.rawQuery("select * from TB_CLIENTE where EMAIL = ? and SENHA = ?", new String[]{email, senha});
 
-        if (cursor.getCount()>0)
+        if (cursor.getCount()>0){
+            cursor.close();
+            mSqLiteDatabase.close();
             return true;
-        else
+        }
+        else{
+            cursor.close();
+            mSqLiteDatabase.close();
             return false;
+        }
     }
 }
