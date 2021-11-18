@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.meguie.dao.BancoDeDados;
+import com.example.meguie.model.Cliente;
 import com.example.meguie.model.Guia;
 
 import java.time.temporal.TemporalUnit;
@@ -20,6 +21,7 @@ public class cadastro extends AppCompatActivity {
     private EditText editNome, editEmail, editSenha, editCPF, editTel;
     private Button btnCadastrar;
     BancoDeDados DB = new BancoDeDados(this);
+    private Cliente cliente = new Cliente();
 
 
     @Override
@@ -39,18 +41,18 @@ public class cadastro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String nome = editNome.getText().toString();
-                String senha = editSenha.getText().toString();
-                String email = editEmail.getText().toString();
-                String cpf = editCPF.getText().toString();
-                String telefone = editTel.getText().toString();
+                cliente.setNome(editNome.getText().toString());
+                cliente.setSenha(editSenha.getText().toString());
+                cliente.setEmail(editEmail.getText().toString());
+                cliente.setCpf(editCPF.getText().toString());
+                cliente.setTelefone(editTel.getText().toString());
 
-                if (nome.equals("") || senha.equals("") || email.equals("") || cpf.equals("") || telefone.equals("")){
+                if (cliente.getNome().equals("") || cliente.getSenha().equals("") || cliente.getEmail().equals("") || cliente.getCpf().equals("") || cliente.getTelefone().equals("")){
                     Toast.makeText(cadastro.this,"Preencha todos os campos!", Toast.LENGTH_LONG).show();
 
                 } else {
 
-                    Boolean insert = DB.salvarDadosCliente(nome,email,senha,cpf,telefone);
+                    Boolean insert = DB.salvarDadosCliente(cliente);
                     if (insert==true){
                         Toast.makeText(cadastro.this,"Cadastrado com sucesso", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getApplicationContext(),guias.class);

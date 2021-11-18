@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.meguie.model.Cliente;
 import com.example.meguie.model.Guia;
 
 import java.util.ArrayList;
@@ -72,16 +73,16 @@ public class BancoDeDados extends SQLiteOpenHelper {
         return listGuia;
     }
 
-    public boolean salvarDadosCliente(String nome, String email, String senha,String cpf, String telefone){
+    public boolean salvarDadosCliente(Cliente cliente){
 
         openDataBase();
         mSqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("NOME",nome);
-        contentValues.put("EMAIL",email);
-        contentValues.put("SENHA",senha);
-        contentValues.put("TELEFONE",telefone);
-        contentValues.put("CPF",cpf);
+        contentValues.put("NOME",cliente.getNome());
+        contentValues.put("EMAIL",cliente.getEmail());
+        contentValues.put("SENHA",cliente.getSenha());
+        contentValues.put("TELEFONE",cliente.getTelefone());
+        contentValues.put("CPF",cliente.getCpf());
 
         long result = mSqLiteDatabase.insert("TB_CLIENTE", null,contentValues);
         mSqLiteDatabase.close();

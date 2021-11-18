@@ -33,7 +33,7 @@ public class guias extends AppCompatActivity {
         setContentView(R.layout.activity_guias);
 
         inicializarComponentes();
-        inicializarBancoDeDados();
+        //inicializarBancoDeDados();
 
         popularLista();
     }
@@ -50,7 +50,7 @@ public class guias extends AppCompatActivity {
         lvGuia.setAdapter(arrayAdapterGuia);
     }
 
-    private void inicializarBancoDeDados() {
+/*    private void inicializarBancoDeDados() {
         mBancoDeDados = new BancoDeDados(this);
 
         File database = getApplicationContext().getDatabasePath(BancoDeDados.NOMEDB);
@@ -62,14 +62,14 @@ public class guias extends AppCompatActivity {
                 alert("Erro ao copiar o banco de dados");
             }
         }
-    }
+    }*/
 
-    private void alert(String s) {
+/*    private void alert(String s) {
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
-    }
+    }*/
 
 
-    private boolean copiaBanco(Context context) {
+    /*private boolean copiaBanco(Context context) {
         try {
             InputStream inputStream = context.getAssets().open(BancoDeDados.NOMEDB);
             String outFile = BancoDeDados.LOCALDB + BancoDeDados.NOMEDB;
@@ -92,5 +92,5 @@ public class guias extends AppCompatActivity {
             e.printStackTrace();
             return false;
         }
-    }
+    }*/
 }
