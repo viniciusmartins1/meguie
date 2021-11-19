@@ -19,24 +19,34 @@
         app:srcCompat="@mipmap/blank" />
 
     <ImageView
-        android:id="@+id/imageView26"
-        android:layout_width="326dp"
-        android:layout_height="267dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginBottom="580dp"
-        android:rotation="-8"
+        android:id="@+id/imageView29"
+        android:layout_width="144dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="656dp"
+        android:layout_marginEnd="267dp"
+        android:rotation="174"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:translationY="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/flairgray" />
 
     <ImageView
-        android:id="@+id/imageView27"
-        android:layout_width="326dp"
-        android:layout_height="267dp"
-        android:layout_marginTop="596dp"
-        android:layout_marginEnd="216dp"
-        android:rotation="-190"
+        android:id="@+id/imageView26"
+        android:layout_width="144dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="297dp"
+        android:layout_marginBottom="609dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:translationY="-70dp"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/flairgray" />
 
@@ -45,9 +55,9 @@
         android:layout_width="348dp"
         android:layout_height="63dp"
         android:layout_marginStart="31dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="46dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="568dp"
+        android:layout_marginBottom="622dp"
         android:text="Guias Disponíveis"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -55,20 +65,20 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/lvGuia"
-        android:layout_width="375dp"
-        android:layout_height="551dp"
+        android:layout_width="392dp"
+        android:layout_height="475dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="133dp"
+        android:layout_marginBottom="123dp"
+        android:divider="@null"
+        android:dividerHeight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.905" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

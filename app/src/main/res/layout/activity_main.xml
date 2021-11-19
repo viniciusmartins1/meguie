@@ -40,6 +40,7 @@
         android:layout_marginStart="204dp"
         android:layout_marginBottom="580dp"
         android:rotation="-8"
+        android:translationY="-70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/flairgray" />
@@ -51,6 +52,7 @@
         android:layout_marginTop="596dp"
         android:layout_marginEnd="216dp"
         android:rotation="-190"
+        android:translationY="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/flairgray" />
@@ -93,8 +95,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="270dp"
-        android:layout_height="30dp"
+        android:layout_width="311dp"
+        android:layout_height="31dp"
         android:layout_marginStart="81dp"
         android:layout_marginTop="596dp"
         android:layout_marginEnd="60dp"
@@ -184,11 +186,11 @@
 
     <Button
         android:id="@+id/btnTrocar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="255dp"
+        android:layout_width="113dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="249dp"
         android:layout_marginTop="586dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginEnd="49dp"
         android:layout_marginBottom="97dp"
         android:background="@null"
         android:text="Cadastre-se"

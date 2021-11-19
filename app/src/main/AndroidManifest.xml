@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/icone_1"
         android:supportsRtl="true"
         android:theme="@style/Theme.Meguie">
-        <activity android:name=".splash" android:exported="true" android:theme="@style/AppThemeNoActionBar">
+        <activity
+            android:name=".homepage"
+            android:exported="false"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".splash"
+            android:exported="true"
+            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,39 +26,32 @@
         <activity
             android:name=".erro"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar"
-            />
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".concluido"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar"
-            />
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".guias"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar"
-            />
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".roteiro"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar"
-            />
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".pesqcidade"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar"
-            />
+            android:theme="@style/AppThemeNoActionBar" />
+
         <activity
             android:name=".cadastro"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar">
-        </activity>
+            android:theme="@style/AppThemeNoActionBar"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar"
-            >
-        </activity>
+            android:theme="@style/AppThemeNoActionBar"></activity>
     </application>
 
 </manifest>
