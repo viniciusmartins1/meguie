@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.meguie.dao.BancoDeDados;
+import com.example.meguie.design.GuiaAdapter;
 import com.example.meguie.model.Guia;
 
 import java.io.File;
@@ -46,8 +47,19 @@ public class guias extends AppCompatActivity {
         mBancoDeDados = new BancoDeDados(this);
         listGuia.clear();
         listGuia = mBancoDeDados.allGuia();
-        arrayAdapterGuia = new ArrayAdapter<Guia>(this, android.R.layout.simple_list_item_1, listGuia);
-        lvGuia.setAdapter(arrayAdapterGuia);
+
+        ArrayList<Guia> arrayList = new ArrayList<>();
+
+        for (Guia guia : listGuia){
+            arrayList.add(new Guia(R.mipmap.user, guia.getNome()));
+        }
+
+        GuiaAdapter guiaAdapter = new GuiaAdapter(this,R.layout.list_roll,arrayList);
+
+        lvGuia.setAdapter(guiaAdapter);
+
+/*        arrayAdapterGuia = new ArrayAdapter<Guia>(this, android.R.layout.simple_list_item_1, listGuia);
+        lvGuia.setAdapter(arrayAdapterGuia);*/
     }
 
 /*    private void inicializarBancoDeDados() {

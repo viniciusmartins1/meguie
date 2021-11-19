@@ -4,8 +4,25 @@ public class Guia {
 
     private int idGuia;
     private String nome;
+    private int imagem;
+
+    public int getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(int imagem) {
+        this.imagem = imagem;
+    }
 
     public Guia() {
+    }
+
+
+    public Guia(int imagem,String nome) {
+
+        this.imagem=imagem;
+        this.nome=nome;
+
     }
 
     public int getIdGuia() {
