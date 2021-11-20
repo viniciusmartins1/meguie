@@ -32,14 +32,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intentCadastro = new Intent(this, cadastro.class);
+        Intent intentBypass = new Intent(this, homepage.class);
 
         inicializarComponentes();
         inicializarBancoDeDados();
         mudarTelaCadastro(intentCadastro);
         fazerLogin();
 
-
+        Button btnBypass= findViewById(R.id.btnbypass);
+        btnBypass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intentBypass);
+            }
+        });
     }
+
 
     private void mudarTelaCadastro(Intent intent) {
         btnTrocar.setOnClickListener(new View.OnClickListener() {

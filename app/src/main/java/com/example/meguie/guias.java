@@ -26,7 +26,6 @@ public class guias extends AppCompatActivity {
     private BancoDeDados mBancoDeDados;
     private ListView lvGuia;
     private List<Guia> listGuia = new ArrayList<Guia>();
-    private ArrayAdapter<Guia> arrayAdapterGuia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +57,6 @@ public class guias extends AppCompatActivity {
 
         lvGuia.setAdapter(guiaAdapter);
 
-/*        arrayAdapterGuia = new ArrayAdapter<Guia>(this, android.R.layout.simple_list_item_1, listGuia);
-        lvGuia.setAdapter(arrayAdapterGuia);*/
     }
 
 /*    private void inicializarBancoDeDados() {

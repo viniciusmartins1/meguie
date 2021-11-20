@@ -7,6 +7,37 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.example.meguie.dao.BancoDeDados;
+import com.example.meguie.design.GuiaAdapter;
+import com.example.meguie.design.RoteiroAdapter;
+import com.example.meguie.model.Guia;
+import com.example.meguie.model.Roteiro;
+
+import java.util.ArrayList;
+import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.example.meguie.dao.BancoDeDados;
+import com.example.meguie.design.GuiaAdapter;
+import com.example.meguie.model.Guia;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +45,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Roteiros extends Fragment {
+
+    private ListView lvRoteiros;
+    private List<Roteiro> listRoteiros = new ArrayList<Roteiro>();
+    private BancoDeDados mBancoDeDados;
+    private Context mContext;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,6 +83,12 @@ public class Roteiros extends Fragment {
     }
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext=context;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
@@ -58,7 +100,30 @@ public class Roteiros extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_roteiros, container, false);
+            View view = inflater.inflate(R.layout.fragment_roteiros, container, false);
+            lvRoteiros = (ListView) view.findViewById(R.id.listRoteiros);
+            popularLista();
+
+        //return inflater.inflate(R.layout.fragment_roteiros, container, false);
+        return view;
     }
+
+    private void popularLista() {
+        mBancoDeDados = new BancoDeDados(this.getActivity());
+        listRoteiros.clear();
+        listRoteiros = mBancoDeDados.allRoteiros();
+
+        ArrayList<Roteiro> arrayList = new ArrayList<>();
+
+        for (Roteiro roteiro : listRoteiros){
+            arrayList.add(new Roteiro(roteiro.getTitulo(), roteiro.getCidade(), roteiro.getPreco(), roteiro.getDuracao(), roteiro.getDescricao(), R.mipmap.spimage_foreground));
+        }
+
+        //GuiaAdapter guiaAdapter = new GuiaAdapter(getActivity(),R.layout.list_roll,arrayList);
+        RoteiroAdapter roteiroAdapter = new RoteiroAdapter(this.getActivity(),R.layout.list_roll_roteiros,arrayList);
+
+        lvRoteiros.setAdapter(roteiroAdapter);
+
+    }
+
 }

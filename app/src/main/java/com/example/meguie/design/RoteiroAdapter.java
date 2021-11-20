@@ -12,16 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.meguie.R;
-import com.example.meguie.model.Guia;
+import com.example.meguie.model.Roteiro;
 
 import java.util.ArrayList;
 
-public class GuiaAdapter extends ArrayAdapter<Guia> {
+public class RoteiroAdapter extends ArrayAdapter<Roteiro> {
 
     private Context mContext;
     private int mResource;
 
-    public GuiaAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Guia> objects) {
+    public RoteiroAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Roteiro> objects) {
         super(context, resource, objects);
         this.mContext=context;
         this.mResource=resource;
@@ -35,18 +35,34 @@ public class GuiaAdapter extends ArrayAdapter<Guia> {
 
         convertView = layoutInflater.inflate(mResource,parent,false);
 
-        ImageView imageView = convertView.findViewById(R.id.image);
+        ImageView imageView = convertView.findViewById(R.id.image_rot);
 
-        TextView textoNome = convertView.findViewById(R.id.textoTitulo);
+        TextView textoTitulo = convertView.findViewById(R.id.textoTitulo);
 
-        TextView textoDes = convertView.findViewById(R.id.textoCidade);
+        TextView textoCidade = convertView.findViewById(R.id.textoCidade);
+
+        TextView textoDescricao = convertView.findViewById(R.id.textoDescricao);
+
+        TextView textoDuracao = convertView.findViewById(R.id.textoDuracao);
+
+        TextView textoPreco = convertView.findViewById(R.id.textoPreco);
+
 
         imageView.setImageResource(getItem(position).getImagem());
 
-        textoNome.setText(getItem(position).getNome());
+        textoTitulo.setText(getItem(position).getTitulo());
+
+        textoCidade.setText(getItem(position).getCidade());
+
+        textoDescricao.setText(getItem(position).getDescricao());
+
+        textoDuracao.setText(getItem(position).getDuracao()+" horas");
+
+        textoPreco.setText("R$ "+getItem(position).getPreco()+",00");
 
         //textoDes.setText(getItem(position).getIdGuia());
 
         return convertView;
     }
+
 }

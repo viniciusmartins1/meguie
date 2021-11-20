@@ -4,9 +4,9 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/image"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/image"
         android:src="@color/colorAccent" />
 
     <TextView
@@ -15,11 +15,11 @@
         android:layout_toRightOf="@+id/image"
         android:layout_marginLeft="20dp"
         style="@style/TextAppearance.AppCompat.Title"
-        android:id="@+id/textoNome"
+        android:id="@+id/textoTitulo"
         android:text="Name" />
 
     <TextView
-        android:id="@+id/textoDes"
+        android:id="@+id/textoCidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/image"

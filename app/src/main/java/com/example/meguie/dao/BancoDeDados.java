@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.example.meguie.model.Cliente;
 import com.example.meguie.model.Guia;
+import com.example.meguie.model.Roteiro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +72,31 @@ public class BancoDeDados extends SQLiteOpenHelper {
         cursor.close();
         mSqLiteDatabase.close();
         return listGuia;
+    }
+
+    public List<Roteiro> allRoteiros(){
+        openDataBase();
+        mSqLiteDatabase = this.getWritableDatabase();
+        List<Roteiro> listRoteiro = new ArrayList<Roteiro>();
+        String sql = "SELECT * FROM TB_ROTEIRO";
+        Cursor cursor = mSqLiteDatabase.rawQuery(sql, null);
+        if (cursor.getCount() > 0){
+            if (cursor.moveToFirst()){
+                do {
+                    Roteiro r = new Roteiro();
+                    r.setId(cursor.getInt(0));
+                    r.setDescricao(cursor.getString(1));
+                    r.setTitulo(cursor.getString(2));
+                    r.setCidade(cursor.getString(3));
+                    r.setPreco(cursor.getString(4));
+                    r.setDuracao(cursor.getString(5));
+                    listRoteiro.add(r);
+                }while (cursor.moveToNext());
+            }
+        }
+        cursor.close();
+        mSqLiteDatabase.close();
+        return listRoteiro;
     }
 
     public boolean salvarDadosCliente(Cliente cliente){
