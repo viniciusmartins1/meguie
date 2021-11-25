@@ -3,7 +3,10 @@ package com.example.meguie;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -32,10 +35,43 @@ public class guias extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guias);
 
+        Intent intent = getIntent();
+        int idRoteiro = (int) intent.getSerializableExtra("id");
+        String tituloRoteiro = (String) intent.getSerializableExtra("titulo");
+        String cidadeRoteiro = (String) intent.getSerializableExtra("cidade");
+        String precoRoteiro = (String) intent.getSerializableExtra("preco");
+        String duracaoRoteiro = (String) intent.getSerializableExtra("duracao");
+        String descricaoRoteiro = (String) intent.getSerializableExtra("descricao");
+
         inicializarComponentes();
         //inicializarBancoDeDados();
 
         popularLista();
+
+        Toast.makeText(this, "ID: "+ idRoteiro, Toast.LENGTH_LONG).show();
+
+        lvGuia.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(guias.this, checkout.class);
+
+                intent.putExtra("id", listGuia.get(position).getIdGuia());
+                intent.putExtra("nome", listGuia.get(position).getNome());
+                intent.putExtra("instagram", listGuia.get(position).getInstagram());
+                intent.putExtra("cnpj", listGuia.get(position).getCnpj());
+                intent.putExtra("idRoteiro", idRoteiro);
+                intent.putExtra("tituloRoteiro", tituloRoteiro);
+                intent.putExtra("cidadeRoteiro", cidadeRoteiro);
+                intent.putExtra("precoRoteiro", precoRoteiro);
+                intent.putExtra("duracaoRoteiro", duracaoRoteiro);
+                intent.putExtra("descricaoRoteiro", descricaoRoteiro);
+
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     private void inicializarComponentes() {
@@ -50,7 +86,7 @@ public class guias extends AppCompatActivity {
         ArrayList<Guia> arrayList = new ArrayList<>();
 
         for (Guia guia : listGuia){
-            arrayList.add(new Guia(R.mipmap.user, guia.getNome()));
+            arrayList.add(new Guia(R.drawable.ic_baseline_account_circle_24, guia.getNome(), guia.getInstagram(), guia.getDescricao()));
         }
 
         GuiaAdapter guiaAdapter = new GuiaAdapter(this,R.layout.list_roll,arrayList);

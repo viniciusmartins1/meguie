@@ -1,5 +1,6 @@
 package com.example.meguie;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.meguie.dao.BancoDeDados;
@@ -103,6 +105,23 @@ public class Roteiros extends Fragment {
             View view = inflater.inflate(R.layout.fragment_roteiros, container, false);
             lvRoteiros = (ListView) view.findViewById(R.id.listRoteiros);
             popularLista();
+
+            lvRoteiros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(getActivity(), guias.class);
+
+                    intent.putExtra("id", listRoteiros.get(position).getId());
+                    intent.putExtra("titulo", listRoteiros.get(position).getTitulo());
+                    intent.putExtra("cidade", listRoteiros.get(position).getCidade());
+                    intent.putExtra("preco", listRoteiros.get(position).getPreco());
+                    intent.putExtra("duracao", listRoteiros.get(position).getDuracao());
+                    intent.putExtra("descricao", listRoteiros.get(position).getDescricao());
+
+                    startActivity(intent);
+
+                }
+            });
 
         //return inflater.inflate(R.layout.fragment_roteiros, container, false);
         return view;

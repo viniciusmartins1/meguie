@@ -1,5 +1,7 @@
 package com.example.meguie;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.meguie.dao.BancoDeDados;
+import com.example.meguie.design.RoteiroAdapter;
+import com.example.meguie.design.RoteiroAdapterHome;
+import com.example.meguie.model.Roteiro;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +36,13 @@ public class Home extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextView txtOla;
+    private ListView lvRoteiroAleatorio;
+    private ListView lvRoteiroHome;
+    private List<Roteiro> listRoteirosHome = new ArrayList<Roteiro>();
+    private BancoDeDados mBancoDeDados;
+    private Context mContext;
 
     public Home() {
         // Required empty public constructor
@@ -53,12 +73,48 @@ public class Home extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        Intent intent = getActivity().getIntent();
+        String idCliente = (String) intent.getSerializableExtra("id");
+        String nomeCliente = (String) intent.getSerializableExtra("nome");
+
+        txtOla = view.findViewById(R.id.txtOla);
+        txtOla.setText("Olá, " + nomeCliente);
+
+        lvRoteiroHome = (ListView) view.findViewById(R.id.listRoteiroHome);
+
+        popularLista();
+
+        return view;
     }
+
+    private void popularLista() {
+        mBancoDeDados = new BancoDeDados(this.getActivity());
+        listRoteirosHome.clear();
+        listRoteirosHome = mBancoDeDados.allRoteiros();
+
+        ArrayList<Roteiro> arrayList = new ArrayList<Roteiro>();
+        ArrayList<Roteiro> arrayListAleatorio = new ArrayList<Roteiro>();
+
+        for (Roteiro roteiro : listRoteirosHome){
+            arrayList.add(new Roteiro(roteiro.getTitulo(), roteiro.getCidade(), roteiro.getPreco(), roteiro.getDuracao(), roteiro.getDescricao(), R.mipmap.spimage_foreground));
+        }
+
+        Random rnd = new Random();
+
+        arrayListAleatorio.add(arrayList.get(rnd.nextInt(arrayList.size())));
+
+        //GuiaAdapter guiaAdapter = new GuiaAdapter(getActivity(),R.layout.list_roll,arrayList);
+        RoteiroAdapterHome roteiroAdapterHome = new RoteiroAdapterHome(this.getActivity(),R.layout.list_roteiro_home,arrayListAleatorio);
+
+        lvRoteiroHome.setAdapter(roteiroAdapterHome);
+
+    }
+
 }

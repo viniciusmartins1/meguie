@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppThemeNoActionBar"
+    tools:context=".checkout">
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="525dp"
+        android:layout_height="845dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/blank" />
+
+    <Button
+        android:id="@+id/btnconfirmar"
+        android:layout_width="198dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="559dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="124dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Confirmar"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="144dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="297dp"
+        android:layout_marginBottom="609dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:translationY="-70dp"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/flairgray" />
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="144dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="656dp"
+        android:layout_marginEnd="267dp"
+        android:rotation="174"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:translationY="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/flairgray" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="294dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="635dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Confirmação de viagem"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNomeGuia"
+        android:layout_width="284dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="513dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Nome do guia"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtInstagram"
+        android:layout_width="284dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="218dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="479dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Instagram do guia"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTituloRoteiro"
+        android:layout_width="284dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="445dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCidadeRoteiro"
+        android:layout_width="284dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="286dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="411dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPrecoRoteiro"
+        android:layout_width="284dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="377dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDuracaoRoteiro"
+        android:layout_width="284dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="354dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="343dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCNPJGuia"
+        android:layout_width="284dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="309dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDescricaoRoteiro"
+        android:layout_width="284dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="422dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="275dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

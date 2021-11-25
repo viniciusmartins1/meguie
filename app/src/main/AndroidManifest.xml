@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Meguie">
         <activity
+            android:name=".checkout"
+            android:exported="false" />
+        <activity
             android:name=".homepage"
             android:exported="false"
             android:theme="@style/AppThemeNoActionBar" />
@@ -36,22 +39,17 @@
             android:exported="true"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".roteiro"
-            android:exported="true"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
             android:name=".pesqcidade"
             android:exported="true"
             android:theme="@style/AppThemeNoActionBar" />
-
         <activity
             android:name=".cadastro"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar" />
     </application>
 
 </manifest>

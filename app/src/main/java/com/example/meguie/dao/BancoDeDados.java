@@ -65,6 +65,11 @@ public class BancoDeDados extends SQLiteOpenHelper {
                     Guia g = new Guia();
                     g.setIdGuia(cursor.getInt(0));
                     g.setNome(cursor.getString(1));
+                    g.setEmail(cursor.getString(2));
+                    g.setInstagram(cursor.getString(4));
+                    g.setCnpj(cursor.getString(5));
+                    g.setEndereco(cursor.getString(6));
+                    g.setDescricao(cursor.getString(7));
                     listGuia.add(g);
                 }while (cursor.moveToNext());
             }
@@ -135,21 +140,31 @@ public class BancoDeDados extends SQLiteOpenHelper {
         }
     }
 
-    public boolean checkEmailSenha(String email, String senha){
+    public Cliente checkEmailSenha(String email, String senha){
 
         openDataBase();
         mSqLiteDatabase = this.getWritableDatabase();
         Cursor cursor = mSqLiteDatabase.rawQuery("select * from TB_CLIENTE where EMAIL = ? and SENHA = ?", new String[]{email, senha});
+        Cliente cliente = new Cliente();
 
         if (cursor.getCount()>0){
+
+            if (cursor.moveToFirst()){
+                do {
+
+                    cliente.setId(cursor.getString(0));
+                    cliente.setNome(cursor.getString(1));
+                }while (cursor.moveToNext());
+            }
+
             cursor.close();
             mSqLiteDatabase.close();
-            return true;
+            return cliente;
         }
         else{
             cursor.close();
             mSqLiteDatabase.close();
-            return false;
+            return null;
         }
     }
 }

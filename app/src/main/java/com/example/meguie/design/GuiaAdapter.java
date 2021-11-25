@@ -37,13 +37,23 @@ public class GuiaAdapter extends ArrayAdapter<Guia> {
 
         ImageView imageView = convertView.findViewById(R.id.image);
 
+        ImageView imageViewInstagram = convertView.findViewById(R.id.imageinstagram);
+
         TextView textoNome = convertView.findViewById(R.id.textoTitulo);
 
-        TextView textoDes = convertView.findViewById(R.id.textoCidade);
+        TextView textoInstagram = convertView.findViewById(R.id.textoInstagram);
+
+        TextView textoDescricaoGuia = convertView.findViewById(R.id.textoDescricaoGuia);
 
         imageView.setImageResource(getItem(position).getImagem());
 
+        imageViewInstagram.setImageResource(R.mipmap.instagramicon_foreground);
+
         textoNome.setText(getItem(position).getNome());
+
+        textoInstagram.setText(getItem(position).getInstagram());
+
+        textoDescricaoGuia.setText(getItem(position).getDescricao());
 
         //textoDes.setText(getItem(position).getIdGuia());
 
