@@ -106,6 +106,10 @@ public class Roteiros extends Fragment {
             lvRoteiros = (ListView) view.findViewById(R.id.listRoteiros);
             popularLista();
 
+            Intent intent = getActivity().getIntent();
+            String idCliente = (String) intent.getSerializableExtra("id");
+            String nomeCliente = (String) intent.getSerializableExtra("nome");
+
             lvRoteiros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -117,6 +121,8 @@ public class Roteiros extends Fragment {
                     intent.putExtra("preco", listRoteiros.get(position).getPreco());
                     intent.putExtra("duracao", listRoteiros.get(position).getDuracao());
                     intent.putExtra("descricao", listRoteiros.get(position).getDescricao());
+                    intent.putExtra("idCliente", idCliente);
+                    intent.putExtra("nomeCliente", nomeCliente);
 
                     startActivity(intent);
 

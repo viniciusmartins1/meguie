@@ -43,6 +43,9 @@ public class guias extends AppCompatActivity {
         String duracaoRoteiro = (String) intent.getSerializableExtra("duracao");
         String descricaoRoteiro = (String) intent.getSerializableExtra("descricao");
 
+        String idCliente = (String) intent.getSerializableExtra("idCliente");
+        String nomeCliente = (String) intent.getSerializableExtra("nomeCliente");
+
         inicializarComponentes();
         //inicializarBancoDeDados();
 
@@ -66,6 +69,8 @@ public class guias extends AppCompatActivity {
                 intent.putExtra("precoRoteiro", precoRoteiro);
                 intent.putExtra("duracaoRoteiro", duracaoRoteiro);
                 intent.putExtra("descricaoRoteiro", descricaoRoteiro);
+                intent.putExtra("idCliente", idCliente);
+                intent.putExtra("nomeCliente", nomeCliente);
 
                 startActivity(intent);
 

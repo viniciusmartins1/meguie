@@ -10,7 +10,9 @@ import androidx.annotation.Nullable;
 
 import com.example.meguie.model.Cliente;
 import com.example.meguie.model.Guia;
+import com.example.meguie.model.Pagamento;
 import com.example.meguie.model.Roteiro;
+import com.example.meguie.model.Viagem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,6 +81,29 @@ public class BancoDeDados extends SQLiteOpenHelper {
         return listGuia;
     }
 
+    public List<Pagamento> allPagamentos(){
+
+        openDataBase();
+        mSqLiteDatabase = this.getWritableDatabase();
+        List<Pagamento> listPagamento = new ArrayList<Pagamento>();
+        String sql = "SELECT * FROM TB_TIPO_PAGAMENTO";
+        Cursor cursor = mSqLiteDatabase.rawQuery(sql, null);
+        if (cursor.getCount() > 0){
+            if (cursor.moveToFirst()){
+                do {
+                    Pagamento p= new Pagamento();
+                    p.setId(cursor.getInt(0));
+                    p.setDescricao(cursor.getString(1));
+                    listPagamento.add(p);
+                }while (cursor.moveToNext());
+            }
+        }
+        cursor.close();
+        mSqLiteDatabase.close();
+        return listPagamento;
+
+    }
+
     public List<Roteiro> allRoteiros(){
         openDataBase();
         mSqLiteDatabase = this.getWritableDatabase();
@@ -120,6 +145,27 @@ public class BancoDeDados extends SQLiteOpenHelper {
         if (result==1) return false;
         else
             return true;
+    }
+
+    public boolean salvarDadosViagem(Viagem viagem) {
+
+        openDataBase();
+        mSqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("DATA_VIAGEM",viagem.getDataViagem());
+        contentValues.put("ID_CLIENTE",viagem.getIdCliente());
+        contentValues.put("ID_GUIA",viagem.getIdGuia());
+        contentValues.put("ID_ROTEIRO",viagem.getIdRoteiro());
+        contentValues.put("ID_STATUS_VIAGEM",viagem.getIdStatusViagem());
+        contentValues.put("ID_PAGAMENTO",viagem.getIdPagamento());
+
+
+        long result = mSqLiteDatabase.insert("TB_VIAGEM", null,contentValues);
+        mSqLiteDatabase.close();
+        if (result==1) return false;
+        else
+            return true;
+
     }
 
     public boolean checkEmail(String email){
