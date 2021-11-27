@@ -9,12 +9,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.meguie.dao.BancoDeDados;
+import com.example.meguie.dao.ViagemDados;
 import com.example.meguie.design.RoteiroAdapter;
 import com.example.meguie.design.RoteiroAdapterHome;
+import com.example.meguie.design.ViagemAdapter;
 import com.example.meguie.model.Roteiro;
 
 import java.util.ArrayList;
@@ -43,6 +46,9 @@ public class Home extends Fragment {
     private List<Roteiro> listRoteirosHome = new ArrayList<Roteiro>();
     private BancoDeDados mBancoDeDados;
     private Context mContext;
+
+    private ListView lvViagens;
+    private List<ViagemDados> listViagens = new ArrayList<ViagemDados>();
 
     public Home() {
         // Required empty public constructor
@@ -88,8 +94,30 @@ public class Home extends Fragment {
         txtOla.setText("Olá, " + nomeCliente);
 
         lvRoteiroHome = (ListView) view.findViewById(R.id.listRoteiroHome);
+        lvViagens = (ListView) view.findViewById(R.id.listViewViagens);
 
         popularLista();
+
+        popularlistaViagem();
+
+        lvRoteiroHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), guias.class);
+
+                intent.putExtra("id", listRoteirosHome.get(position).getId());
+                intent.putExtra("titulo", listRoteirosHome.get(position).getTitulo());
+                intent.putExtra("cidade", listRoteirosHome.get(position).getCidade());
+                intent.putExtra("preco", listRoteirosHome.get(position).getPreco());
+                intent.putExtra("duracao", listRoteirosHome.get(position).getDuracao());
+                intent.putExtra("descricao", listRoteirosHome.get(position).getDescricao());
+                intent.putExtra("idCliente", idCliente);
+                intent.putExtra("nomeCliente", nomeCliente);
+
+                startActivity(intent);
+
+            }
+        });
 
         return view;
     }
@@ -110,10 +138,28 @@ public class Home extends Fragment {
 
         arrayListAleatorio.add(arrayList.get(rnd.nextInt(arrayList.size())));
 
-        //GuiaAdapter guiaAdapter = new GuiaAdapter(getActivity(),R.layout.list_roll,arrayList);
         RoteiroAdapterHome roteiroAdapterHome = new RoteiroAdapterHome(this.getActivity(),R.layout.list_roteiro_home,arrayListAleatorio);
 
         lvRoteiroHome.setAdapter(roteiroAdapterHome);
+
+    }
+
+    private void popularlistaViagem() {
+
+        mBancoDeDados = new BancoDeDados(this.getActivity());
+        listViagens.clear();
+        listViagens = mBancoDeDados.allViagens();
+
+        ArrayList<ViagemDados> arrayList = new ArrayList<>();
+
+        for (ViagemDados viagem : listViagens){
+            arrayList.add(new ViagemDados(viagem.getDataViagem(), viagem.getNomeGuia(), viagem.getTituloRoteiro(), viagem.getStatusViagem(), viagem.getCidade(), viagem.getDescricaoRoteiro(), R.mipmap.spimage_foreground));
+        }
+
+        //GuiaAdapter guiaAdapter = new GuiaAdapter(getActivity(),R.layout.list_roll,arrayList);
+        ViagemAdapter viagemAdapter = new ViagemAdapter(this.getActivity(),R.layout.list_roll_passeios,arrayList);
+
+        lvViagens.setAdapter(viagemAdapter);
 
     }
 

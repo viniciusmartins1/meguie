@@ -47,11 +47,9 @@ public class guias extends AppCompatActivity {
         String nomeCliente = (String) intent.getSerializableExtra("nomeCliente");
 
         inicializarComponentes();
-        //inicializarBancoDeDados();
 
         popularLista();
 
-        Toast.makeText(this, "ID: "+ idRoteiro, Toast.LENGTH_LONG).show();
 
         lvGuia.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -99,48 +97,4 @@ public class guias extends AppCompatActivity {
         lvGuia.setAdapter(guiaAdapter);
 
     }
-
-/*    private void inicializarBancoDeDados() {
-        mBancoDeDados = new BancoDeDados(this);
-
-        File database = getApplicationContext().getDatabasePath(BancoDeDados.NOMEDB);
-        if (database.exists() == false){
-            mBancoDeDados.getReadableDatabase();
-            if (copiaBanco(this)){
-                alert("Banco copiado com sucesso!");
-            } else {
-                alert("Erro ao copiar o banco de dados");
-            }
-        }
-    }*/
-
-/*    private void alert(String s) {
-        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
-    }*/
-
-
-    /*private boolean copiaBanco(Context context) {
-        try {
-            InputStream inputStream = context.getAssets().open(BancoDeDados.NOMEDB);
-            String outFile = BancoDeDados.LOCALDB + BancoDeDados.NOMEDB;
-            OutputStream outputStream = new FileOutputStream(outFile);
-
-            byte[] buff = new byte[1024];
-            int length = 0;
-
-            while ((length = inputStream.read(buff)) > 0){
-                outputStream.write(buff, 0 , length);
-            }
-            outputStream.flush();
-            outputStream.close();
-            return true;
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return false;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }*/
 }

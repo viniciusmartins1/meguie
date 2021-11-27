@@ -129,6 +129,42 @@ public class BancoDeDados extends SQLiteOpenHelper {
         return listRoteiro;
     }
 
+    public List<ViagemDados> allViagens() {
+
+        openDataBase();
+        mSqLiteDatabase = this.getWritableDatabase();
+        List<ViagemDados> listViagem = new ArrayList<ViagemDados>();
+        String sql = "select V.ID_VIAGEM, V.DATA_VIAGEM, C.NOME, G.NOME, R.TITULO, R.CIDADE, R.DESCRICAO, SV.DESCRICAO, TP.DESCRICAO from TB_VIAGEM as V\n" +
+                "inner join TB_CLIENTE as C on V.ID_CLIENTE == C.ID_CLIENTE\n" +
+                "inner join TB_GUIA as G on V.ID_GUIA == G.ID_GUIA\n" +
+                "inner join TB_ROTEIRO AS R on V.ID_ROTEIRO == V.ID_ROTEIRO\n" +
+                "inner join TB_STATUS_VIAGEM as SV on V.ID_STATUS_VIAGEM == SV.ID_STATUS\n" +
+                "inner join TB_TIPO_PAGAMENTO as TP on V.ID_PAGAMENTO == TP.ID_PAGAMENTO";
+
+        Cursor cursor = mSqLiteDatabase.rawQuery(sql, null);
+        if (cursor.getCount() > 0){
+            if (cursor.moveToFirst()){
+                do {
+                    ViagemDados v = new ViagemDados();
+                    v.setId(cursor.getInt(0));
+                    v.setDataViagem(cursor.getString(1));
+                    v.setNomeCliente(cursor.getString(2));
+                    v.setNomeGuia(cursor.getString(3));
+                    v.setTituloRoteiro(cursor.getString(4));
+                    v.setCidade(cursor.getString(5));
+                    v.setDescricaoRoteiro(cursor.getString(6));
+                    v.setStatusViagem(cursor.getString(7));
+                    v.setTipoPagamento(cursor.getString(8));
+                    listViagem.add(v);
+                }while (cursor.moveToNext());
+            }
+        }
+        cursor.close();
+        mSqLiteDatabase.close();
+        return listViagem;
+
+    }
+
     public boolean salvarDadosCliente(Cliente cliente){
 
         openDataBase();
@@ -213,4 +249,31 @@ public class BancoDeDados extends SQLiteOpenHelper {
             return null;
         }
     }
+
+    public String checkPag(String pag){
+
+        openDataBase();
+        mSqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = mSqLiteDatabase.rawQuery("select * from TB_TIPO_PAGAMENTO where DESCRICAO = ?", new String[]{pag});
+        String idPag = "0";
+
+        if (cursor.getCount()>0){
+
+            if (cursor.moveToFirst()){
+                do {
+                    idPag = cursor.getString(0);
+                }while (cursor.moveToNext());
+            }
+
+            cursor.close();
+            mSqLiteDatabase.close();
+            return idPag;
+        }
+        else{
+            cursor.close();
+            mSqLiteDatabase.close();
+            return null;
+        }
+    }
+
 }

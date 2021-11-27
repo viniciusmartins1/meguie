@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -22,6 +23,7 @@ import com.example.meguie.dao.BancoDeDados;
 import com.example.meguie.design.RoteiroAdapter;
 import com.example.meguie.model.Pagamento;
 import com.example.meguie.model.Roteiro;
+import com.example.meguie.model.Viagem;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,7 +32,7 @@ import java.util.List;
 public class checkout extends AppCompatActivity {
 
     TextView txtNome, txtInstagram, txtTituloRoteiro, txtCidadeRoteiro, txtPrecoRoteiro, txtDuracaoRoteiro, txtDescricaoRoteiro, txtCnpj;
-    Button btnData;
+    Button btnData,btnTeste;
     Button btnConfirmar;
     DatePickerDialog.OnDateSetListener setListener;
 
@@ -41,6 +43,7 @@ public class checkout extends AppCompatActivity {
     private Context mContext;
     AutoCompleteTextView autoPag;
     String a;
+    Viagem viagem = new Viagem();
 
 
     @Override
@@ -85,13 +88,47 @@ public class checkout extends AppCompatActivity {
             }
         });
 
+        btnTeste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                autoPag.showDropDown();
+
+            }
+        });
+
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                a = autoPag.getText().toString();
 
-                //Toast.makeText(this, "ID: "+ a, Toast.LENGTH_LONG).show();
+
+                viagem.setDataViagem(autoPag.getText().toString());
+                viagem.setIdPagamento(Integer.parseInt(mBancoDeDados.checkPag(autoPag.getText().toString())));
+
+                boolean checkViagem = mBancoDeDados.salvarDadosViagem(viagem);
+
+                if (checkViagem) {
+
+                    Toast.makeText(checkout.this, "Sua Solicitação foi realizada", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(checkout.this, concluido.class);
+                    startActivity(intent);
+
+                } else {
+
+                    Toast.makeText(checkout.this, "ERRO: Sua solicitação falhou, tente novamente mais tarde.", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+            }
+        });
+
+        autoPag.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                btnTeste.setText(autoPag.getText().toString());
 
             }
         });
@@ -100,7 +137,7 @@ public class checkout extends AppCompatActivity {
 
     private void inicializandoValores() {
         Intent intent = getIntent();
-        int id = (int) intent.getSerializableExtra("id");
+        int idGuia = (int) intent.getSerializableExtra("id");
         String nome = (String) intent.getStringExtra("nome");
         String instagram = (String) intent.getStringExtra("instagram");
         String cnpj = (String) intent.getStringExtra("cnpj");
@@ -126,19 +163,14 @@ public class checkout extends AppCompatActivity {
         txtTituloRoteiro.setText(tituloRoteiro);
         txtDescricaoRoteiro.setText(descricaoRoteiro);
 
+        viagem.setIdCliente(Integer.parseInt(idCliente));
+        viagem.setIdGuia(idGuia);
+        viagem.setIdRoteiro(idRoteiro);
+        viagem.setIdStatusViagem(1);
 
         //Toast.makeText(this, "ID: "+ idCliente, Toast.LENGTH_LONG).show();
     }
 
-/*    private void inicializarTexto() {
-        Intent intent = getIntent();
-        Long id = (long) intent.getSerializableExtra("id");
-        String nome = (String) intent.getSerializableExtra("nome");
-        String instagram = (String) intent.getSerializableExtra("instagram");
-
-        txtNome.setText(nome);
-        txtInstagram.setText(instagram);
-    }*/
 
     private void inicializarComponentes () {
 
@@ -153,6 +185,7 @@ public class checkout extends AppCompatActivity {
         btnData = findViewById(R.id.btndata);
         btnConfirmar = findViewById(R.id.btnconfirmar);
         autoPag = findViewById(R.id.autoPag);
+        btnTeste = findViewById(R.id.button2);
 
     }
 

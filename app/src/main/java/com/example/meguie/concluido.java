@@ -2,7 +2,13 @@ package com.example.meguie;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.WindowManager;
+import android.widget.ImageView;
+
+import com.airbnb.lottie.LottieAnimationView;
 
 public class concluido extends AppCompatActivity {
 
@@ -10,5 +16,17 @@ public class concluido extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_concluido);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                startActivity(new Intent(concluido.this,homepage.class));
+            }
+        },2900);
+
     }
+
+
 }
