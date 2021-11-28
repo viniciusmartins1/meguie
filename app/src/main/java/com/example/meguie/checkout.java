@@ -57,6 +57,10 @@ public class checkout extends AppCompatActivity {
 
         inicializandoValores();
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
@@ -153,13 +157,13 @@ public class checkout extends AppCompatActivity {
         String idCliente = (String) intent.getStringExtra("idCliente");
         String nomeCliente = (String) intent.getStringExtra("nomeCliente");
 
-        txtNome.setText(nome);
+        txtNome.setText("Nome: "+ nome);
         txtInstagram.setText(instagram);
-        txtCnpj.setText(cnpj);
+        txtCnpj.setText("CNPJ: "+ cnpj);
 
         txtCidadeRoteiro.setText(cidadeRoteiro);
-        txtPrecoRoteiro.setText("R$ " + precoRoteiro + ",00");
-        txtDuracaoRoteiro.setText(duracaoRoteiro+ " Horas");
+        txtPrecoRoteiro.setText("Preço: R$ " + precoRoteiro + ",00");
+        txtDuracaoRoteiro.setText("Duração: "+ duracaoRoteiro+ " Horas");
         txtTituloRoteiro.setText(tituloRoteiro);
         txtDescricaoRoteiro.setText(descricaoRoteiro);
 

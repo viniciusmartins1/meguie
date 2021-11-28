@@ -156,7 +156,6 @@ public class Home extends Fragment {
             arrayList.add(new ViagemDados(viagem.getDataViagem(), viagem.getNomeGuia(), viagem.getTituloRoteiro(), viagem.getStatusViagem(), viagem.getCidade(), viagem.getDescricaoRoteiro(), R.mipmap.spimage_foreground));
         }
 
-        //GuiaAdapter guiaAdapter = new GuiaAdapter(getActivity(),R.layout.list_roll,arrayList);
         ViagemAdapter viagemAdapter = new ViagemAdapter(this.getActivity(),R.layout.list_roll_passeios,arrayList);
 
         lvViagens.setAdapter(viagemAdapter);

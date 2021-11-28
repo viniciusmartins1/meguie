@@ -55,8 +55,6 @@ public class GuiaAdapter extends ArrayAdapter<Guia> {
 
         textoDescricaoGuia.setText(getItem(position).getDescricao());
 
-        //textoDes.setText(getItem(position).getIdGuia());
-
         return convertView;
     }
 }

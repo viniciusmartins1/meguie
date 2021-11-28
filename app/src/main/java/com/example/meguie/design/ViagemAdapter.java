@@ -58,7 +58,7 @@ public class ViagemAdapter extends ArrayAdapter<ViagemDados> {
 
         textoDescricaoHome.setText(getItem(position).getDescricaoRoteiro());
 
-        textoDataHome.setText("Marcado para o dia: " + getItem(position).getDataViagem());
+        textoDataHome.setText(getItem(position).getDataViagem());
 
         textStatusHome.setText("Status: " + getItem(position).getStatusViagem());
 
