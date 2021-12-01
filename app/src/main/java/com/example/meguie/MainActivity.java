@@ -59,23 +59,24 @@ public class MainActivity extends AppCompatActivity {
                 String senha = editSenha.getText().toString();
 
                 if (email.equals("")|| senha.equals("")){
-                    Toast.makeText(MainActivity.this,"Preencha todos os campos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,"Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 } else {
                     Cliente checkLogin = DB.checkEmailSenha(email,senha);
                     if (checkLogin!= null){
-                        Toast.makeText(MainActivity.this,"Login feito com sucesso", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this,"Login feito com sucesso", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), homepage.class);
 
                         intent.putExtra("id", checkLogin.getId());
                         intent.putExtra("nome", checkLogin.getNome());
 
                         startActivity(intent);
+
+                        finish();
+
                     } else {
-                        Toast.makeText(MainActivity.this,"Email ou senha inválidos", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this,"Email ou senha inválidos", Toast.LENGTH_SHORT).show();
                     }
                 }
-
-                //startActivity(intent);
             }
         });
     }
@@ -94,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
         if (database.exists() == false){
             mBancoDeDados.getReadableDatabase();
             if (copiaBanco(this)){
-                Toast.makeText(MainActivity.this,"Banco copiado com sucesso", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"Banco copiado com sucesso", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(MainActivity.this,"Erro ao copiar banco", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"Erro ao copiar banco", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -125,5 +126,4 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
-
 }

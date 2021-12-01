@@ -1,5 +1,6 @@
 package com.example.meguie;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.meguie.dao.BancoDeDados;
 import com.example.meguie.model.Cliente;
 import com.example.meguie.model.Guia;
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 import java.time.temporal.TemporalUnit;
 
@@ -29,8 +32,16 @@ public class cadastro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-
         InicializarComponentes();
+
+        SimpleMaskFormatter smf = new SimpleMaskFormatter("(NN) NNNNN-NNNN");
+        MaskTextWatcher mtw = new MaskTextWatcher(editTel,smf);
+        editTel.addTextChangedListener(mtw);
+
+        SimpleMaskFormatter smfcpf = new SimpleMaskFormatter("NNN.NNN.NNN-NN");
+        MaskTextWatcher mtwcpf = new MaskTextWatcher(editCPF,smfcpf);
+        editCPF.addTextChangedListener(mtwcpf);
+
         Cadastrar();
 
 
@@ -48,25 +59,42 @@ public class cadastro extends AppCompatActivity {
                 cliente.setTelefone(editTel.getText().toString());
 
                 if (cliente.getNome().equals("") || cliente.getSenha().equals("") || cliente.getEmail().equals("") || cliente.getCpf().equals("") || cliente.getTelefone().equals("")){
-                    Toast.makeText(cadastro.this,"Preencha todos os campos!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(cadastro.this,"Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+
+                } else if (cliente.getCpf().length()<14) {
+
+                    Toast.makeText(cadastro.this,"CPF inválido", Toast.LENGTH_SHORT).show();
+
+                } else if (cliente.getTelefone().length()<15) {
+
+                    Toast.makeText(cadastro.this,"Número de celular inválido", Toast.LENGTH_SHORT).show();
 
                 } else {
 
-                    Boolean insert = DB.salvarDadosCliente(cliente);
-                    if (insert==true){
-                        Toast.makeText(cadastro.this,"Cadastrado com sucesso", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(),guias.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(cadastro.this,"Cadastro falhou", Toast.LENGTH_LONG).show();
-                    }
-/*                    Boolean checkemail = DB.checkEmail(email);
-                    if (checkemail==false){
+                    AlertDialog dialog = new AlertDialog.Builder(cadastro.this)
+                            .setTitle("Confirmar")
+                            .setMessage("Deseja realizar o cadastro?")
+                            .setPositiveButton("Sim", null)
+                            .setNegativeButton("Cancelar", null)
+                            .show();
 
-                    } else {
-                        Toast.makeText(cadastro.this,"Email já cadastrado", Toast.LENGTH_LONG).show();
-                    }*/
+                    Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    positiveButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
 
+                            Boolean insert = DB.salvarDadosCliente(cliente);
+                            if (insert==true){
+                                Toast.makeText(cadastro.this,"Cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(),guias.class);
+                                startActivity(intent);
+                                finish();
+
+                            } else {
+                                Toast.makeText(cadastro.this,"Cadastro falhou", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             }
         });

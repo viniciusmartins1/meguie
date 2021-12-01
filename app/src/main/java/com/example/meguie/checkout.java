@@ -94,8 +94,6 @@ public class checkout extends AppCompatActivity {
         viagem.setIdRoteiro(idRoteiro);
         viagem.setIdStatusViagem(1);
 
-        Toast.makeText(this, "id: " + idCliente, Toast.LENGTH_SHORT).show();
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -181,20 +179,17 @@ public class checkout extends AppCompatActivity {
                                     intent.putExtra("nome",nomeUser);
                                     dialog.dismiss();
                                     startActivity(intent);
+                                    finish();
 
                                 } else {
 
                                     Toast.makeText(checkout.this, "ERRO: Sua solicitação falhou, tente novamente mais tarde.", Toast.LENGTH_SHORT).show();
                                     dialog.dismiss();
                                 }
-
                             }
                         });
-
                     }
-
                 }
-
             }
         });
 
@@ -206,12 +201,6 @@ public class checkout extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    private void inicializandoValores() {
-
-
     }
 
 
@@ -243,6 +232,4 @@ public class checkout extends AppCompatActivity {
         autoPag.setAdapter(pagAdapter);
 
     }
-
-
 }

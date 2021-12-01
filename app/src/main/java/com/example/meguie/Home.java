@@ -11,7 +11,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +23,7 @@ import com.example.meguie.dao.ViagemDados;
 import com.example.meguie.design.RoteiroAdapter;
 import com.example.meguie.design.RoteiroAdapterHome;
 import com.example.meguie.design.ViagemAdapter;
+import com.example.meguie.model.Pagamento;
 import com.example.meguie.model.Roteiro;
 
 import java.util.ArrayList;
@@ -85,26 +89,12 @@ public class Home extends Fragment {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-
-        Intent intent = getActivity().getIntent();
-        String idCliente = (String) intent.getSerializableExtra("id");
-        String nomeCliente = (String) intent.getSerializableExtra("nome");
-
-        popularlistaViagem(idCliente);
-
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         Intent intent = getActivity().getIntent();
         String idCliente = (String) intent.getSerializableExtra("id");
         String nomeCliente = (String) intent.getSerializableExtra("nome");
-
-        //String teste = this.getArguments().getString("id");
 
         txtOla = view.findViewById(R.id.txtOla);
         txtOla.setText("Olá, " + nomeCliente);
@@ -113,7 +103,6 @@ public class Home extends Fragment {
         lvViagens = (ListView) view.findViewById(R.id.listViewViagens);
 
         popularLista();
-
         popularlistaViagem(idCliente);
 
         lvViagens.setEmptyView(view.findViewById(R.id.txtEmpty));
@@ -137,9 +126,6 @@ public class Home extends Fragment {
 
             }
         });
-
-        //Toast.makeText(this.getActivity(), "id: " + idCliente, Toast.LENGTH_SHORT).show();
-
         return view;
     }
 

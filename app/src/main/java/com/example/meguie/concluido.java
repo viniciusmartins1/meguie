@@ -34,6 +34,7 @@ public class concluido extends AppCompatActivity {
                 intent1.putExtra("nome", nomeCliente);
 
                 startActivity(intent1);
+                finish();
             }
         },2900);
 

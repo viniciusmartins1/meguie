@@ -129,10 +129,6 @@ public class Roteiros extends Fragment {
                 }
 
             });
-
-        Toast.makeText(this.getActivity(), "id: " + idCliente, Toast.LENGTH_SHORT).show();
-
-        //return inflater.inflate(R.layout.fragment_roteiros, container, false);
         return view;
     }
 
