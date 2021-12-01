@@ -129,13 +129,13 @@ public class BancoDeDados extends SQLiteOpenHelper {
         return listRoteiro;
     }
 
-    public List<ViagemDados> allViagens() {
+    public List<ViagemDados> allViagens(String idCliente) {
 
         openDataBase();
         mSqLiteDatabase = this.getWritableDatabase();
         List<ViagemDados> listViagem = new ArrayList<ViagemDados>();
         String sql = "select V.ID_VIAGEM, V.DATA_VIAGEM, C.NOME, G.NOME, R.TITULO, R.CIDADE, R.DESCRICAO, SV.DESCRICAO, TP.DESCRICAO from TB_VIAGEM as V\n" +
-                "inner join TB_CLIENTE as C on V.ID_CLIENTE == C.ID_CLIENTE\n" +
+                "inner join TB_CLIENTE as C on V.ID_CLIENTE == " + idCliente + "\n" +
                 "inner join TB_GUIA as G on V.ID_GUIA == G.ID_GUIA\n" +
                 "inner join TB_ROTEIRO AS R on V.ID_ROTEIRO == V.ID_ROTEIRO\n" +
                 "inner join TB_STATUS_VIAGEM as SV on V.ID_STATUS_VIAGEM == SV.ID_STATUS\n" +

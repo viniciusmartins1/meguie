@@ -7,11 +7,13 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.meguie.dao.BancoDeDados;
 import com.example.meguie.dao.ViagemDados;
@@ -83,12 +85,26 @@ public class Home extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+        Intent intent = getActivity().getIntent();
+        String idCliente = (String) intent.getSerializableExtra("id");
+        String nomeCliente = (String) intent.getSerializableExtra("nome");
+
+        popularlistaViagem(idCliente);
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         Intent intent = getActivity().getIntent();
         String idCliente = (String) intent.getSerializableExtra("id");
         String nomeCliente = (String) intent.getSerializableExtra("nome");
+
+        //String teste = this.getArguments().getString("id");
 
         txtOla = view.findViewById(R.id.txtOla);
         txtOla.setText("Olá, " + nomeCliente);
@@ -98,7 +114,10 @@ public class Home extends Fragment {
 
         popularLista();
 
-        popularlistaViagem();
+        popularlistaViagem(idCliente);
+
+        lvViagens.setEmptyView(view.findViewById(R.id.txtEmpty));
+
 
         lvRoteiroHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -118,6 +137,8 @@ public class Home extends Fragment {
 
             }
         });
+
+        //Toast.makeText(this.getActivity(), "id: " + idCliente, Toast.LENGTH_SHORT).show();
 
         return view;
     }
@@ -144,11 +165,11 @@ public class Home extends Fragment {
 
     }
 
-    private void popularlistaViagem() {
+    private void popularlistaViagem(String idCliente) {
 
         mBancoDeDados = new BancoDeDados(this.getActivity());
         listViagens.clear();
-        listViagens = mBancoDeDados.allViagens();
+        listViagens = mBancoDeDados.allViagens(idCliente);
 
         ArrayList<ViagemDados> arrayList = new ArrayList<>();
 

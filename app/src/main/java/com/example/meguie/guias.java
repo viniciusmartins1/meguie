@@ -75,6 +75,8 @@ public class guias extends AppCompatActivity {
             }
         });
 
+        Toast.makeText(this, "id: " + idCliente, Toast.LENGTH_SHORT).show();
+
     }
 
     private void inicializarComponentes() {

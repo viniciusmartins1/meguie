@@ -21,12 +21,19 @@ public class concluido extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        Intent intent = getIntent();
+        String idCliente = (String) intent.getStringExtra("id");
+        String nomeCliente = (String) intent.getStringExtra("nome");
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
+                Intent intent1 = new Intent(concluido.this, homepage.class);
+                intent1.putExtra("id", idCliente);
+                intent1.putExtra("nome", nomeCliente);
 
-                startActivity(new Intent(concluido.this,homepage.class));
+                startActivity(intent1);
             }
         },2900);
 
